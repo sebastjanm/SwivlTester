@@ -22,6 +22,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:AVSandboxSwivlDockDetached object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:AVSandboxTrackingStateChangedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:AVSandboxPanningStateChangedNotification object:nil];
+
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:AVSandboxRecordingStoppedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:AVSandboxRecordingStartedNotification object:nil];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }

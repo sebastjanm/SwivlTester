@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SwivlCommonLib.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+    self.isRecording = NO;
+    self.atRecordingView = YES;
     self.swivl = [SwivlCommonLib sharedSwivlBaseForDelegate:self];
     
     return YES;
@@ -63,24 +63,29 @@
 
 - (BOOL) appIsRecording
 {
+    
 	BOOL recording = self.isRecording;
     return recording;
 }
 
 - (void) setAppRecording: (BOOL ) recording
 {
-
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"start recording!" message:@"start your recording here" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    self.isRecording = recording;
     
 }
 
 - (BOOL) appAtRecordingView
 {
+    
 	BOOL atRecordingScreen = self.atRecordingView;
 	return atRecordingScreen;
 }
 
 - (void) transitionAppToRecordingView
 {
+    [self setAppRecording:YES];
     self.atRecordingView = YES;
 }
 

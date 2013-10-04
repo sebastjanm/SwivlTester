@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SwivlCommonLib.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, SwivlBaseDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
