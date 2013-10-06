@@ -42,4 +42,11 @@
     self.statusTextView.text = string;
 }
 
+- (IBAction)sendNotification:(id)sender {
+    NSNotification* event = [NSNotification
+                             notificationWithName:AVSandboxNavToFromRecordingScreen
+                             object:[NSNumber numberWithBool:YES]];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:event];
+}
 @end

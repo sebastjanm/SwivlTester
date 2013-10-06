@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *statusTextView;
+- (IBAction)sendNotification:(id)sender;
 
 @end
